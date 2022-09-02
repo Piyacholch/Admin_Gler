@@ -26,7 +26,7 @@
       <div class="col-sm-2">
         <div class="card">
           <div class="card-body">
-            <span class="card-title"> ประเมินอารมณ์ </span>
+            <span class="card-title"> ประเมิน </span>
             <span class="material-symbols-outlined"> sentiment_satisfied </span>
             <h1 class="number_dashbord">
               20 
@@ -74,13 +74,6 @@
 
     </div>
   </div>
-  
-<iframe
-    allow="microphone;"
-    width="350"
-    height="430"
-    src="https://console.dialogflow.com/api-client/demo/embedded/6f53e21c-1df3-488a-8774-677c6ab6026a">
-</iframe>
       
 </template>
 

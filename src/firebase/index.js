@@ -1,18 +1,18 @@
+/* eslint-disable no-unused-vars */
 import { initializeApp } from "firebase/app"
 import { getAuth } from "firebase/auth"
-
+import { getAnalytics } from "firebase/analytics";
 const firebaseConfig = {
-  apiKey: "AIzaSyB-oTpfY43b05KgdPCzLC4nnnHBoG_7N0E",
-  authDomain: "gler-project1-d9yc.firebaseapp.com",
-  projectId: "gler-project1-d9yc",
-  storageBucket: "gler-project1-d9yc.appspot.com",
-  messagingSenderId: "525541179168",
-  appId: "1:525541179168:web:0c68a9dc6aa934f5d72145",
-  measurementId: "G-TERGN1HH27"
+  apiKey: "AIzaSyC7j5dvP47JFB2pBVbqiQNkssr90ZaPzuM",
+  authDomain: "gler-yglt.firebaseapp.com",
+  projectId: "gler-yglt",
+  storageBucket: "gler-yglt.appspot.com",
+  messagingSenderId: "798041588376",
+  appId: "1:798041588376:web:a55b4f72d91aa566cf86ed",
+  measurementId: "G-LP9H4T20HJ"
 };
-
 const app = initializeApp(firebaseConfig)
-
+const analytics = getAnalytics(app);
 const auth = getAuth(app)
 
 export { auth }
