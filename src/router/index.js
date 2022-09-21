@@ -1,8 +1,28 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { auth } from '../firebase'
 import Login from '../views/Login.vue'
 import Register from '../views/Register.vue'
 import Home from '../views/Home.vue'
-import { auth } from '../firebase'
+import replymessage from '../views/reply_message.vue'
+import chatopen from '../views/chat/chatopen.vue'
+import chatpositive from '../views/chat/chatpositive.vue'
+import chatnegative from '../views/chat/chatnegative.vue'
+import chatstimulate from '../views/chat/chatstimulate.vue'
+import chatclose from '../views/chat/chatclose.vue'
+import activity from '../views/activity.vue'
+import assistance from '../views/assistance.vue'
+import uploadimage from '../views/uploads-image.vue'
+
+import insertchatopen from '../views/insert/insertChatopen.vue'
+import insertchatpostive from '../views/insert/insertChatpositive.vue'
+import insertchatnegative from '../views/insert/insertChatnegative.vue'
+import insertchatstimulate from '../views/insert/insertChatstimulate.vue'
+import insertchatclose from '../views/insert/insertChatclose.vue'
+import insertassistance from '../views/insert/insertAssistance.vue'
+import insertactivity from '../views/insert/insertActivity.vue'
+
+import updatechatopen from '../views/update/_id/updateChatopen.vue'
+import updatechatopen01 from '../views/update/_id/updateChatopen.vue'
 
 const routes = [
   {
@@ -11,7 +31,7 @@ const routes = [
     component: Login
   },
   {
-    path: '/Register',
+    path: '/register',
     name: 'Register',
     component: Register
   },
@@ -20,6 +40,105 @@ const routes = [
     name: 'Home',
     component: Home
   },
+  {
+    path: '/replymessage',
+    name: 'reply_message',
+    component: replymessage
+  },
+  {
+    path: '/chatopen',
+    name: 'chatopen',
+    component: chatopen
+  },
+  {
+    path: '/chatpositive',
+    name: 'chatpositive',
+    component: chatpositive
+  },
+  {
+    path: '/chatnegative',
+    name: 'chatnegative',
+    component: chatnegative
+  },
+  {
+    path: '/chatstimulate',
+    name: 'chatstimulate',
+    component: chatstimulate
+  },
+  {
+    path: '/chatclose',
+    name: 'chatclose',
+    component: chatclose
+  },
+  {
+    path: '/activity',
+    name: 'activity',
+    component: activity
+  },
+  {
+    path: '/assistance',
+    name: 'assistance',
+    component: assistance
+  },
+  {
+    path: '/assistance',
+    name: 'assistance',
+    component: assistance
+  },
+  {
+    path: '/uploadimage',
+    name: 'uploadimage',
+    component: uploadimage
+  },
+
+  // insert
+  {
+    path: '/insertchatopen',
+    name: 'insertchatopen',
+    component: insertchatopen
+  },
+  {
+    path: '/insertchatpositive',
+    name: 'insertchatpositive',
+    component: insertchatpostive
+  },
+  {
+    path: '/insertchatnegative',
+    name: 'insertchatnegative',
+    component: insertchatnegative
+  },
+  {
+    path: '/insertchatstimulate',
+    name: 'insertchatstimulate',
+    component: insertchatstimulate
+  },
+  {
+    path: '/insertchatclose',
+    name: 'insertchatclose',
+    component: insertchatclose
+  },
+  {
+    path: '/insertassistance',
+    name: 'insertassistance',
+    component: insertassistance
+  },
+  {
+    path: '/insertactivity',
+    name: 'insertactivity',
+    component: insertactivity
+  },
+
+  // update
+  {
+    path: '/updatechatopen/:id/:Text',
+    name: 'updatechatopen',
+    component: updatechatopen
+  },
+  {
+    path: '/updatechatopen',
+    name: 'updatechatopen01',
+    component: updatechatopen01
+  }
 ]
 
 const router = createRouter({
