@@ -11,7 +11,7 @@
           class="form-control"
           id="exampleFormControlTextarea1"
           rows="3"
-          v-model="loaddata.Text"
+          v-model="Text"
          
         ></textarea>
       </div>

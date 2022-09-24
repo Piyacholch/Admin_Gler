@@ -23,12 +23,29 @@ import insertactivity from '../views/insert/insertActivity.vue'
 
 import updatechatopen from '../views/update/_id/updateChatopen.vue'
 import updatechatopen01 from '../views/update/_id/updateChatopen.vue'
-
+import list from '../views/list.vue'
+import add from '../views/add.vue'
+import update from '../views/update.vue'
 const routes = [
   {
     path: '/login',
     name: 'Login',
     component: Login
+  },
+  {
+    path: '/list',
+    name: 'list',
+    component: list
+  },
+  {
+    path: '/add',
+    name: 'add',
+    component: add
+  },
+  {
+    path: '/update/:chatId',
+    name: 'update',
+    component: update
   },
   {
     path: '/register',
@@ -138,7 +155,8 @@ const routes = [
     path: '/updatechatopen',
     name: 'updatechatopen01',
     component: updatechatopen01
-  }
+  },
+
 ]
 
 const router = createRouter({

@@ -1,7 +1,7 @@
 
 import axios from "axios";
 export default function useApi() {
-    const baseURL = "http://localhost:5000";
+    const baseURL = "http://localhost:5050";
     const api = axios.create({
         baseURL,
       });
@@ -9,8 +9,14 @@ export default function useApi() {
         const res = await api.get("/activity");
         return res.data;
       };
+      const updateChatopen = async (id, Text) => {
+        const res = await api.patch(`/updateChatopen/${id}/${Text}`);
+        return res.data;
+      };
+
       return {
         api,
-        fetchActivity
+        fetchActivity,updateChatopen
     };
 }
+
