@@ -22,8 +22,9 @@
               >
                 {{ chat.Text }}
                 <span class="badge badge-primary badge-pill">
-                  <router-link
-                    :to="{ path: `/update/${chat.id}` }"
+                  <router-link 
+                  :to="{ path: `/update/${chat.id}` }
+                   "
                     class="btn btn-primary ml-2"
                     >Edit</router-link
                   >

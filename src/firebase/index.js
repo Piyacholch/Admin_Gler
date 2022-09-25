@@ -2,7 +2,6 @@
 import { initializeApp } from "firebase/app"
 import { getAuth } from "firebase/auth"
 import { getAnalytics } from "firebase/analytics";
-import { getFirestore, collection } from "firebase/firestore";
 const firebaseConfig = {
   apiKey: "AIzaSyC7j5dvP47JFB2pBVbqiQNkssr90ZaPzuM",
   authDomain: "gler-yglt.firebaseapp.com",
@@ -15,9 +14,5 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig)
 const analytics = getAnalytics(app);
 const auth = getAuth(app)
+
 export { auth }
-
-const db = getFirestore(app);
-const ChatPositiveColRef = collection(db, "ChatPositive");
-export default ChatPositiveColRef;
-
