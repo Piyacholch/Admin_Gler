@@ -26,6 +26,8 @@ import updatechatpositive from '../views/update/_id/updateChatpositive.vue'
 import updatechatnegative from '../views/update/_id/updateChatnegative.vue'
 import updatechatstimulate from '../views/update/_id/updateChatstimulate.vue'
 import updatechatclose from '../views/update/_id/updateChatclose.vue'
+import updateactivitye from '../views/update/_id/updateActivity.vue'
+import updateassistance from '../views/update/_id/upateAssistance.vue'
 
 import list from '../views/list.vue'
 import add from '../views/add.vue'
@@ -174,6 +176,16 @@ const routes = [
     path: '/updatechatclose/:id/:Text',
     name: 'updatechatclose',
     component: updatechatclose
+  },
+  {
+    path: '/updateActivity/:id/:name/:description/:website',
+    name: 'updateactivitye',
+    component: updateactivitye
+  },
+  {
+    path: '/updateAssistance/:id/:name/:tel/:description',
+    name: 'updateassistance',
+    component: updateassistance
   },
  
 ]

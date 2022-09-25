@@ -55,7 +55,7 @@
       getChatByID() {
         
         axios
-          .get(`http://localhost:5050/chatopenByID/${this.$route.params.id}`)
+          .get(`http://localhost:5050/chatstimulateByID/${this.$route.params.id}`)
           .then((response) => {
             this.data = response.data;
            
@@ -63,10 +63,10 @@
       },
       updateChatopen() {
         axios
-          .patch(`http://localhost:5050/updatechatOpen/${this.$route.params.id}/${this.data?.Text}`)
+          .patch(`http://localhost:5050/updatechatStimulate/${this.$route.params.id}/${this.data?.Text}`)
           .then((response) => {
             this.data = response.data;
-            this.$router.push("/chatopen");
+            this.$router.push("/chatstimulate");
           
           });
       },
