@@ -62,10 +62,8 @@ export default {
         });
     },
     updateChatopen() {
-      const formData = new FormData();
-      formData.append("Text", this.Text);
       axios
-        .post("http://localhost:5050/updatechatopen/", formData)
+        .patch(`http://localhost:5050/updatechatOpen/${this.$route.params.id}/${this.data?.Text}`)
         .then((response) => {
           this.data = response.data;
           this.$router.push("/chatopen");
