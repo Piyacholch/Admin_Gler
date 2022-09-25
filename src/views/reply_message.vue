@@ -38,7 +38,7 @@
                 ชุดข้อความตอบกลับประโยคด้านบวก
             </div>
             <div class="col-3">
-                <a href="/list"> <button type="button" class="btn btn-warning edit">แก้ไข</button></a>
+                <a href="/chatpositive"> <button type="button" class="btn btn-warning edit">แก้ไข</button></a>
             </div>
         </div>
         <div class="row block-item">

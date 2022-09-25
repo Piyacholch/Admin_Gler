@@ -22,7 +22,11 @@ import insertassistance from '../views/insert/insertAssistance.vue'
 import insertactivity from '../views/insert/insertActivity.vue'
 
 import updatechatopen from '../views/update/_id/updateChatopen.vue'
-import updatechatopen01 from '../views/update/_id/updateChatopen.vue'
+import updatechatpositive from '../views/update/_id/updateChatpositive.vue'
+import updatechatnegative from '../views/update/_id/updateChatnegative.vue'
+import updatechatstimulate from '../views/update/_id/updateChatstimulate.vue'
+import updatechatclose from '../views/update/_id/updateChatclose.vue'
+
 import list from '../views/list.vue'
 import add from '../views/add.vue'
 import update from '../views/update.vue'
@@ -108,7 +112,7 @@ const routes = [
     component: uploadimage
   },
 
-  // insert
+  /////////////////////// insert ////////////////////////
   {
     path: '/insertchatopen',
     name: 'insertchatopen',
@@ -145,18 +149,33 @@ const routes = [
     component: insertactivity
   },
 
-  // update
+  /////////////////////// update /////////////////////////////
   {
     path: '/updatechatopen/:id/:Text',
     name: 'updatechatopen',
     component: updatechatopen
   },
   {
-    path: '/updatechatopen',
-    name: 'updatechatopen01',
-    component: updatechatopen01
+    path: '/updatechatpositive/:id/:Text',
+    name: 'updatechatpositive',
+    component: updatechatpositive
   },
-
+  {
+    path: '/updatechatnegative/:id/:Text',
+    name: 'updatechatnegative',
+    component: updatechatnegative
+  },
+  {
+    path: '/updatechatstimulate/:id/:Text',
+    name: 'updatechatstimulate',
+    component: updatechatstimulate
+  },
+  {
+    path: '/updatechatclose/:id/:Text',
+    name: 'updatechatclose',
+    component: updatechatclose
+  },
+ 
 ]
 
 const router = createRouter({
