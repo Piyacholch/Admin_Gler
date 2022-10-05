@@ -29,6 +29,7 @@ import updatechatclose from '../views/update/_id/updateChatclose.vue'
 import updateactivitye from '../views/update/_id/updateActivity.vue'
 import updateassistance from '../views/update/_id/upateAssistance.vue'
 
+import pagination from '../views/pagination.vue'
 import list from '../views/list.vue'
 import add from '../views/add.vue'
 import update from '../views/update.vue'
@@ -181,6 +182,11 @@ const routes = [
     path: '/updateActivity/:id/:name/:description/:website',
     name: 'updateactivitye',
     component: updateactivitye
+  },
+  {
+    path: '/pagination',
+    name: 'pagination',
+    component: pagination
   },
   {
     path: '/updateAssistance/:id/:name/:tel/:description',

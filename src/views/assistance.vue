@@ -46,7 +46,7 @@
             <button
               type="button"
               class="btn btn-outline-primary edit"
-              @click="$router.push(`/updatechatopen/${item.id}/${item.Name}`)"
+              @click="$router.push(`/updateAssistance/${item.id}/${item.Name}/${item.Tel}/${item.Description}`)"
             >
               แก้ไข
             </button>

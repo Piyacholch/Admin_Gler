@@ -46,7 +46,7 @@
             <button
               type="button"
               class="btn btn-outline-primary edit"
-              @click="$router.push(`/updateActivity/${item.id}/${item.Name}/${item.Tel}/${item.Description}`)"
+              @click="$router.push(`/updateActivity/${item.id}/${item.Name}/${item.Website}/${item.Description}`)"
             >
               แก้ไข
             </button>

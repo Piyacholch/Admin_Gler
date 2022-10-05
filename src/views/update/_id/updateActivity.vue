@@ -3,7 +3,7 @@
 
   <div class="Box pt-5 pb-5">
     <div class="box p-4">
-      <h2>เพิ่มกิจกรรมที่ชอบ</h2>
+      <h2>แก้ไขกิจกรรมที่ชอบ</h2>
 
       <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label"
@@ -46,7 +46,7 @@
         <button
           type="button"
           class="btn btn-warning mx-2"
-          @click="updateChatopen(data.Name, data.Tel, data.Description)"
+          @click="updateChatopen(data.Name, data.Website, data.Description)"
         >
           ตกลง
         </button>
@@ -85,7 +85,7 @@ export default {
     updateChatopen() {
       axios
         .patch(
-          `http://localhost:5050/updateActivity/${this.$route.params.id}/${this.data?.Name}/${this.data?.Tel}/${this.data?.Description}`
+          `http://localhost:5050/updateActivity/${this.$route.params.id}/${this.data?.Name}/${this.data?.Website}/${this.data?.Description}`
         )
         .then((response) => {
           this.data = response.data;
@@ -94,8 +94,9 @@ export default {
     },
     reset() {
       this.data.Name = "";
-      this.data.Tel = "";
+      this.data.Website = "";
       this.data.Description = "";
+      
     },
   },
 };
