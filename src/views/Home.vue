@@ -1,129 +1,219 @@
 <template>
-  <head>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
-    />
-  </head>
-  <div class="content">
-    <Navbar />
-    <h1 class="header_text">แดชบอร์ด</h1>
-  </div>
-  <div class="content1">
-    <div class="row">
-      <div class="col-sm-2">
-        <div class="card">
-          <div class="card-body">
-            <span class="card-title"> ผู้ใช้งาน </span>
-            <span class="material-symbols-outlined"> group </span>
-            <h1 class="number_dashbord">
-              20 
-            </h1><span class="close_card">คน</span>
+  <Navbar />
+  <div class="box">
+    <div class="mt-3 pb-5 px-3">
+      <h1>Dashboard</h1>
+    </div>
+    <div class="row row-1">
+      <div class="flexbox px-5">
+        <div class="item">
+          <div class="content1">
+            <p>11111</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="content2">
+            <p>22222</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="content3">
+            <p>33333</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="content4">
+            <p>44444</p>
           </div>
         </div>
       </div>
-
-      <div class="col-sm-2">
-        <div class="card">
-          <div class="card-body">
-            <span class="card-title"> ประเมิน </span>
-            <span class="material-symbols-outlined"> sentiment_satisfied </span>
-            <h1 class="number_dashbord">
-              20 
-            </h1><span class="close_card">คน</span>
+    </div>
+    <div class="row row-2 px-5 mb-4">
+      <div class="col-6 pie">
+        <div class="chart-pie">
+          <div class="chart">
+            <canvas id="myChart" width="400" height="220px"></canvas>
           </div>
         </div>
       </div>
-
-      <div class="col-sm-2">
-        <div class="card">
-          <div class="card-body">
-            <span class="card-title"> ผู้ใช้งาน </span>
-            <span class="material-symbols-outlined"> group </span>
-            <h1 class="number_dashbord">
-              20 
-            </h1><span class="close_card">คน</span>
-          </div>
+      <div class="col-3">
+        <div class="imformation">One of three columns</div>
+      </div>
+      <div class="col-3">
+        <div class="imformation">One of three columns</div>
+      </div>
+    </div>
+    <div class="row row-3 px-5">
+      <div class="dash-2">
+        <div class="line-chart">
+          5555555555
+          <canvas id="myChartline" width="400" height="100" ></canvas>
         </div>
       </div>
-
-      <div class="col-sm-2">
-        <div class="card">
-          <div class="card-body">
-            <span class="card-title"> ผู้ใช้งาน </span>
-            <span class="material-symbols-outlined"> group </span>
-            <h1 class="number_dashbord">
-              20 
-            </h1><span class="close_card">คน</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-2">
-        <div class="card">
-          <div class="card-body">
-            <span class="card-title"> ผู้ใช้งาน </span>
-            <span class="material-symbols-outlined"> group </span>
-            <h1 class="number_dashbord">
-              20 
-            </h1><span class="close_card">คน</span>
-          </div>
-        </div>
-      </div>
-<b-button>Button</b-button>
     </div>
   </div>
-      
 </template>
 
 <script>
+import Chart from "chart.js/auto";
 import Navbar from "../components/Navbar.vue";
 export default {
   components: { Navbar },
+
+  mounted() {
+    const ctx = document.getElementById("myChart");
+
+    const myChart = new Chart(ctx, {
+      type: "bar",
+      data: {
+        labels: ["Red", "Orange", "Yellow", "Green", "Blue"],
+        datasets: [
+          {
+            label: "My First Dataset",
+            data: [300, 50, 100, 50, 60],
+            backgroundColor: [
+              "rgb(255, 99, 132)",
+              "rgb(54, 162, 235)",
+              "rgb(255, 205, 86)",
+              "rgb(255, 205, 86)",
+              "rgb(255, 205, 86)",
+            ],
+            hoverOffset: 4,
+          },
+        ],
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+          },
+        },
+      },
+    });
+
+    const mcl = document.getElementById("myChartline");
+
+    const myChartline = new Chart(mcl, {
+      type: "line",
+      data: {
+        labels: ["Red", "Orange", "Yellow", "Green", "Blue"],
+        datasets: [
+          {
+            label: "My First Dataset",
+            data: [300, 50, 100, 50, 60],
+            backgroundColor: [
+              "rgb(255, 99, 132)",
+              "rgb(54, 162, 235)",
+              "rgb(255, 205, 86)",
+              "rgb(255, 205, 86)",
+              "rgb(255, 205, 86)",
+            ],
+            hoverOffset: 4,
+          },
+        ],
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+          },
+        },
+      },
+    });
+
+
+    myChart;
+    myChartline;
+  },
 };
 </script>
 
-<style>
-/* .content {
-  background-image: url("..//assets/img/BG.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100vh;
-} 
-@media screen and (min-width: 365px) and (max-width: 700px) {
-  .content {
-    background-image: url("..//assets/img/BG_mobile.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 60vh;
-  }
-}*/
-.header_text {
-  padding: 2% 0% 0% 3%;
+<style scoped>
+.box {
+  background-color: #fff8e1;
 }
+.flexbox {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  box-sizing: border-box;
+  margin: 0px -8.5px;
+}
+
+.item {
+  box-sizing: border-box;
+  width: 25%;
+  margin-bottom: 20px;
+  padding: 0px 8.5px;
+}
+
 .content1 {
-  padding: 2% 3% 0% 3%;
-}
-.col-sm-2 {
+  color: #242424;
+  background-color: #ffcc80;
+  font-weight: 600;
   text-align: center;
+  box-sizing: border-box;
+  height: 100%;
+  padding: 10px;
+  border-radius: 8px;
 }
-.card-title {
-  font-size: 20px;
-  font-weight: bold;
+.content2 {
+  color: #242424;
+  background-color: #d0d9ff;
+  font-weight: 600;
+  text-align: center;
+  box-sizing: border-box;
+  height: 100%;
+  padding: 10px;
+  border-radius: 8px;
 }
-.close_card {
-  font-size: 16px;
+.content3 {
+  color: #242424;
+  background-color: #a3e9a4;
+  font-weight: 600;
+  text-align: center;
+  box-sizing: border-box;
+  height: 100%;
+  padding: 10px;
+  border-radius: 8px;
 }
-.number_dashbord {
-  font-weight: bolder;
+.content4 {
+  color: #242424;
+  background-color: #b39ddb;
+  font-weight: 600;
+  text-align: center;
+  box-sizing: border-box;
+  height: 100%;
+  padding: 10px;
+  border-radius: 8px;
 }
-.material-symbols-outlined {
-  
-  color: blue;
+.pie {
+  padding-left: 0px;
 }
-.card {
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+.chart-pie {
+  background-color: #ffff;
+  border-radius: 8px;
 }
-@media screen and (min-width: 365px) and (max-width: 700px) {
+.chart {
+  width: 80%;
+  height: auto;
+  margin: auto;
+}
+.imformation {
+  background-color: #ffff;
+  border-radius: 8px;
+  height: 100%;
+}
+.dash-2 {
+  background-color: #ffff;
+  border-radius: 8px;
+  height: 100%;
+}
+.line-chart{
+  width: 80%;
+  height: auto;
+  margin: auto;
 }
 </style>
