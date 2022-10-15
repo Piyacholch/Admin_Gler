@@ -1,7 +1,10 @@
 /* eslint-disable no-unused-vars */
 import { initializeApp } from "firebase/app"
+import { getStorage } from "firebase/storage";
 import { getAuth } from "firebase/auth"
+import { GoogleAuthProvider } from "firebase/auth";
 import { getAnalytics } from "firebase/analytics";
+
 const firebaseConfig = {
   apiKey: "AIzaSyC7j5dvP47JFB2pBVbqiQNkssr90ZaPzuM",
   authDomain: "gler-yglt.firebaseapp.com",
@@ -14,5 +17,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig)
 const analytics = getAnalytics(app);
 const auth = getAuth(app)
+const provider = new GoogleAuthProvider();
+const storage = getStorage(app);
 
 export { auth }
+export { storage }

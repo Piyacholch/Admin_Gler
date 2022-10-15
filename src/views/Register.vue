@@ -11,6 +11,13 @@
           </div> -->
           <span>หรือใช้บัญชีของคุณ</span>
 
+          <div id="GooglerSingIn" v-if="!isSignedIn">
+            <h3>Google Signin</h3>
+            <button @click="handleSignInGoogle">Google</button>
+          </div>
+        
+          <input type="text" placeholder="Name" v-model="register_form.name" />
+
           <input
             type="email"
             placeholder="Email"
@@ -42,8 +49,15 @@
 </template>
 
 <script>
+import firebase from '../firebase';
 import { ref } from "vue";
 import { useStore } from "vuex";
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+
+firebase
+
+const provider = new GoogleAuthProvider();
+const auth = getAuth();
 
 export default {
   setup() {
@@ -58,6 +72,30 @@ export default {
       register_form,
       register,
     };
+    
+  },
+  data() {
+      return {
+        user: ''
+      }
+  },
+  methods: {
+    handleSignInGoogle() {
+      signInWithPopup(auth, provider)
+        .then((result) => {
+          // const user = result.user;
+
+          console.log(result.user.displayName)
+
+          this.user = result.user.displayName;
+          this.isSignedIn = true;
+          this.$router.push("/");
+        })
+        .catch((error) => {
+          console.log(error);
+         
+        });
+    },
   },
 };
 </script>

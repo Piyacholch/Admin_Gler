@@ -9,7 +9,7 @@
             <a href="#" class="social"><i class="fab fa-google-plus-g">g</i></a>
             <a href="#" class="social"><i class="fab fa-linkedin-in">t</i></a>
           </div> -->
-
+        
           <input type="email" placeholder="Email" v-model="login_form.email" />
           <input
             type="password"
@@ -17,7 +17,7 @@
             v-model="login_form.password"
           />
           <div v-show="error" class="error">{{ this.errorMsg }}</div>
-          <a href="/ForgotPassword" class="a_fg_text">ลืมรหัสผ่าน?</a>
+          <a href="/forgotpassword" class="a_fg_text">ลืมรหัสผ่าน?</a>
 
           <input type="submit" value="Login" />
         </form>
@@ -306,5 +306,11 @@ footer i {
 footer a {
   color: #3c97bf;
   text-decoration: none;
+}
+@media (max-width: 720px) {
+  body{
+    padding: 0px;
+  }
+
 }
 </style>

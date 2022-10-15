@@ -1,4 +1,14 @@
 <template>
+  <head>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
   <Navbar />
   <div class="Box">
     <div>
@@ -7,7 +17,7 @@
 
     <div class="search">
       <div class="row row-menu">
-        <div class="col-lg-9 col-sm-10 col-md-9">
+        <div class="col-lg-9 search-res">
           <div class="input-group mb-3">
             <input
               type="text"
@@ -24,7 +34,7 @@
             </button>
           </div>
         </div>
-        <div class="col-3 col-sm-2 col-md-3 col-flex">
+        <div class="col-lg-3 col-flex">
           <a href="/insertchatopen">
             <button type="button" class="btn btn-outline-success">
               เพิ่มข้อความ
@@ -42,7 +52,8 @@
       >
         <!-- <div class="col-1">{{ item.id }}</div> -->
         <div class="col-8">{{ item.Text }}</div>
-        <div class="col-3">
+
+        <div class="col-3 button-1">
           <button
             type="button"
             class="btn btn-outline-primary edit"
@@ -65,21 +76,48 @@
                 ลบ
             </button> -->
         </div>
+
+        <!-- resposive -->
+
+        <div class="col-3 button-res">
+          <button
+            type="button"
+            class="btn btn-outline-primary edit edit-res"
+            @click="$router.push(`/updatechatopen/${item.id}/${item.Text}`)"
+          >
+            <span class="material-icons"> mode_edit </span>
+          </button>
+
+          <button
+            type="button"
+            class="btn btn-outline-danger delete delete-res"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+            @click="confirmdeletezone(item.id)"
+          >
+            <span class="material-icons"> delete_outline </span>
+          </button>
+          <!-- <button type="button" class="btn btn-outline-danger delete"
+          @click="deletechat(item.id)">
+                ลบ
+            </button> -->
+        </div>
       </div>
+    </div>
 
-      <!-- Button trigger modal -->
+    <!-- Button trigger modal -->
 
-      <!-- Modal -->
-      <div
-        class="modal fade"
-        id="exampleModal"
-        tabindex="-1"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog modal-dialog-centered modal-md">
-          <div class="modal-content border border-warning border-5">
-            <div class="modal-header border-0">
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-md">
+        <div class="modal-content border border-warning border-5">
+          <div class="modal-header border-0">
             <!-- <h5 class="modal-title" id="exampleModalLabel">Modal title</h5> -->
             <button
               type="button"
@@ -87,27 +125,26 @@
               data-bs-dismiss="modal"
               aria-label="Close"
             ></button>
-            </div>
-            <div class="modal-body text-center fs-4 fw-bold">คุณต้องการลบข้อความนี้หรือไม่ ?</div>
-            <div  class="modal-footer border-0 mt-3">
-
-              <button
-                type="button"
-                class="btn btn-warning"
-                data-bs-dismiss="modal"
-                @click="deletechat(id)"
-              >
-                ยืนยัน
-              </button>
-              <button
-                type="button"
-                class="btn btn-secondary"
-                data-bs-dismiss="modal"
-              >
-                ยกเลิก
-              </button>
-              
-            </div>
+          </div>
+          <div class="modal-body text-center fs-4 fw-bold">
+            คุณต้องการลบข้อความนี้หรือไม่ ?
+          </div>
+          <div class="modal-footer border-0 mt-3">
+            <button
+              type="button"
+              class="btn btn-warning"
+              data-bs-dismiss="modal"
+              @click="deletechat(id)"
+            >
+              ยืนยัน
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              ยกเลิก
+            </button>
           </div>
         </div>
       </div>
@@ -123,7 +160,7 @@ export default {
   watch: {
     search() {
       this.getchatopen();
-    }
+    },
   },
   data() {
     return {
@@ -139,7 +176,7 @@ export default {
   methods: {
     getchatopen() {
       axios.get("http://localhost:5050/chatopen").then((response) => {
-        this.loaddata = response.data; 
+        this.loaddata = response.data;
         // console.log(response);
       });
     },
@@ -237,5 +274,52 @@ h1 {
 .delete {
   width: 30%;
   margin-left: 10px;
+}
+.button-res {
+  display: none;
+}
+@media (max-width: 720px) {
+  h1{
+    padding-left: 12px;
+  }
+  .search-res{
+    padding: 0px;
+  }
+  .input-group {
+    width: 100%;
+    padding-bottom: 20px;
+  }
+  .col-3 {
+    padding: 0px;
+  }
+  .button-1 {
+    display: none;
+  }
+  .button-res {
+    display: block;
+  }
+  button {
+    font-size: 14px;
+  }
+  .col-8 {
+    font-size: 14px;
+  }
+  .col-3 {
+    font-size: 14px;
+    margin: auto;
+  }
+  .edit-res{
+    width: 40% !important;
+    padding: 0px !important;
+  }
+  .delete-res{
+    padding: 0px !important;
+    width: 40% !important;
+  }
+  .material-icons{
+    font-size: 16px !important;
+    text-align: center !important;
+  }
+
 }
 </style>

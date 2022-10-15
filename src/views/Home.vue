@@ -8,7 +8,7 @@
       <div class="flexbox px-5">
         <div class="item">
           <div class="content1">
-            <p>11111</p>
+            <p>111</p>
           </div>
         </div>
         <div class="item">
@@ -28,6 +28,27 @@
         </div>
       </div>
     </div>
+
+    <!-- responesive -->
+    <!-- <div class="row row-res px-5 mb-4 mt-4">
+      <div class="col pie">
+        <div class="chart-pie">
+          <div class="chart">
+            <canvas id="myChart1" width="400" height="350px"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row row-res1 px-5 mb-4">
+      <div class="col-6">
+        <div class="imformation">One of three columns</div>
+      </div>
+      <div class="col-6">
+        <div class="imformation">One of three columns</div>
+      </div>
+    </div> -->
+    <!-- responesive -->
+
     <div class="row row-2 px-5 mb-4">
       <div class="col-6 pie">
         <div class="chart-pie">
@@ -36,7 +57,7 @@
           </div>
         </div>
       </div>
-      <div class="col-3">
+      <div class="col-3 ">
         <div class="imformation">One of three columns</div>
       </div>
       <div class="col-3">
@@ -47,7 +68,7 @@
       <div class="dash-2">
         <div class="line-chart">
           5555555555
-          <canvas id="myChartline" width="400" height="100" ></canvas>
+          <canvas id="myChartline" width="400" height="100"></canvas>
         </div>
       </div>
     </div>
@@ -121,7 +142,38 @@ export default {
       },
     });
 
+    // // response
+    // const ct = document.getElementById("myChart1");
 
+    // const myChart1 = new Chart(ct, {
+    //   type: "bar",
+    //   data: {
+    //     labels: ["Red", "Orange", "Yellow", "Green", "Blue"],
+    //     datasets: [
+    //       {
+    //         label: "My First Dataset",
+    //         data: [300, 50, 100, 50, 60],
+    //         backgroundColor: [
+    //           "rgb(255, 99, 132)",
+    //           "rgb(54, 162, 235)",
+    //           "rgb(255, 205, 86)",
+    //           "rgb(255, 205, 86)",
+    //           "rgb(255, 205, 86)",
+    //         ],
+    //         hoverOffset: 4,
+    //       },
+    //     ],
+    //   },
+    //   options: {
+    //     scales: {
+    //       y: {
+    //         beginAtZero: true,
+    //       },
+    //     },
+    //   },
+    // });
+
+    // myChart1;
     myChart;
     myChartline;
   },
@@ -211,9 +263,43 @@ export default {
   border-radius: 8px;
   height: 100%;
 }
-.line-chart{
+.line-chart {
   width: 80%;
   height: auto;
   margin: auto;
+}
+
+@media (max-width: 720px) {
+  .flexbox {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    box-sizing: border-box;
+    margin: 0px -10px;
+  }
+
+  .item {
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 0px 10px;
+  }
+  .row-2 {
+    display: none;
+  }
+  .chart-pie {
+    padding-right: 0px;
+  }
+  #myChart1 {
+    height: 270px !important;
+    width: 100% !important;
+  }
+  .imformation {
+    background-color: #ffff;
+    border-radius: 8px;
+    height: 200px;
+  }
 }
 </style>

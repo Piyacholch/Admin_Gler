@@ -21,7 +21,7 @@
       <div class="footer d-flex justify-content-end mt-4">
         <button
           type="button"
-          class="btn btn-warning mx-2"
+          class="btn btn-warning mx-2 btn-1"
           @click="updateChatopen(data.Text)"
         >
           ตกลง
@@ -93,5 +93,19 @@ h2 {
   margin: auto;
   border-radius: 5px;
   box-shadow: 2px 2px 8px 4px rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 720px) {
+  .box{
+    width: 80%;
+  }
+  .footer{
+    display: flex;
+    justify-content: center !important;
+    align-items: center;
+  }
+  .btn-1{
+    margin-left: 0px !important;
+  }
+
 }
 </style>

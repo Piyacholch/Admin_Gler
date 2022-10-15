@@ -12,6 +12,8 @@ import chatclose from '../views/chat/chatclose.vue'
 import activity from '../views/activity.vue'
 import assistance from '../views/assistance.vue'
 import uploadimage from '../views/uploads-image.vue'
+import uploadimagever from '../views/uploadimageVer.vue'
+import forgotpassword from '../views/forgotPassword.vue'
 
 import insertchatopen from '../views/insert/insertChatopen.vue'
 import insertchatpostive from '../views/insert/insertChatpositive.vue'
@@ -29,7 +31,7 @@ import updatechatclose from '../views/update/_id/updateChatclose.vue'
 import updateactivitye from '../views/update/_id/updateActivity.vue'
 import updateassistance from '../views/update/_id/upateAssistance.vue'
 
-import pagination from '../views/pagination.vue'
+// import pagination from '../views/pagination.vue'
 import list from '../views/list.vue'
 import add from '../views/add.vue'
 import update from '../views/update.vue'
@@ -114,6 +116,16 @@ const routes = [
     name: 'uploadimage',
     component: uploadimage
   },
+  {
+    path: '/uploadimagever',
+    name: 'uploadimagever',
+    component: uploadimagever
+  },
+  {
+    path: '/forgotpassword',
+    name: 'forgotpassword',
+    component: forgotpassword
+  },
 
   /////////////////////// insert ////////////////////////
   {
@@ -183,11 +195,11 @@ const routes = [
     name: 'updateactivitye',
     component: updateactivitye
   },
-  {
-    path: '/pagination',
-    name: 'pagination',
-    component: pagination
-  },
+  // {
+  //   path: '/pagination',
+  //   name: 'pagination',
+  //   component: pagination
+  // },
   {
     path: '/updateAssistance/:id/:name/:tel/:description',
     name: 'updateassistance',

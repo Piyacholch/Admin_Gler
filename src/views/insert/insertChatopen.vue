@@ -5,7 +5,7 @@
     <div class="box p-4">
       <h2>เพิ่มข้อความตอบกลับประโยคทักทาย</h2>
       <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label" 
+        <label for="exampleFormControlTextarea1" class="form-label"
           >เพิ่มข้อความตอบกลับ</label
         >
         <textarea
@@ -19,12 +19,16 @@
         ></textarea>
       </div>
       <div class="footer d-flex justify-content-end mt-4">
-        <button type="button" class="btn btn-warning mx-2" @click="submit(data.Text)">
-        ตกลง
-      </button>
-      <button type="button" class="btn btn-danger" @click="reset()">
-        ยกเลิก
-      </button>
+        <button
+          type="button"
+          class="btn btn-warning mx-2"
+          @click="submit(data.Text)"
+        >
+          ตกลง
+        </button>
+        <button type="button" class="btn btn-danger" @click="reset()">
+          ยกเลิก
+        </button>
       </div>
     </div>
   </div>
@@ -75,5 +79,19 @@ h2 {
   margin: auto;
   border-radius: 5px;
   box-shadow: 2px 2px 8px 4px rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 720px) {
+  .box{
+    width: 80%;
+  }
+  .footer{
+    display: flex;
+    justify-content: center !important;
+    align-items: center;
+  }
+  .btn-1{
+    margin-left: 0px !important;
+  }
+
 }
 </style>

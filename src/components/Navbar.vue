@@ -628,7 +628,7 @@ import { useStore } from 'vuex'
   #my-scroll::-webkit-scrollbar-button:vertical:end:increment{
     display:none;
   } */
-  @media (max-width: 420px) {
+  @media (max-width: 360px) {
     .sidebar li .tooltip {
       display: none;
     }
