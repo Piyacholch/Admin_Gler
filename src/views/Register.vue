@@ -4,18 +4,31 @@
       <div class="form-container sign-in-container">
         <form action="#" @submit.prevent="register">
           <h1>สมัครสมาชิก</h1>
-          <!-- <div class="social-container">
-            <a href="#" class="social"><i class="fab fa-facebook-f">f</i></a>
-            <a href="#" class="social"><i class="fab fa-google-plus-g">g</i></a>
-            <a href="#" class="social"><i class="fab fa-linkedin-in">t</i></a>
-          </div> -->
-          <span>หรือใช้บัญชีของคุณ</span>
 
-          <div id="GooglerSingIn" v-if="!isSignedIn">
+          <div class="row">
+            <div class="col-12">
+              <div id="GooglerSingIn" v-if="!isSignedIn">
+                <button
+                  @click="handleSignInGoogle"
+                  type="button"
+                  class="btn btn-primary btn-sm"
+                >
+                  <i class="fab fa-google-plus-g" @click="handleSignInGoogle"
+                    >G</i
+                  >
+                  Login with Google
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <p class="mt-2">หรือใช้บัญชีของคุณ</p>
+
+          <!-- <div id="GooglerSingIn" v-if="!isSignedIn">
             <h3>Google Signin</h3>
             <button @click="handleSignInGoogle">Google</button>
-          </div>
-        
+          </div> -->
+
           <input type="text" placeholder="Name" v-model="register_form.name" />
 
           <input
@@ -29,9 +42,8 @@
             v-model="register_form.password"
           />
           <div v-show="error" class="error">{{ this.errorMsg }}</div>
-          <a href="/ForgotPassword" class="a_fg_text">ลืมรหัสผ่าน?</a>
-
-          <input type="submit" value="Register" />
+        
+          <input type="submit" value="Register" class="mt-3"/>
         </form>
       </div>
 
@@ -48,13 +60,20 @@
   </div>
 </template>
 
+
 <script>
-import firebase from '../firebase';
+import firebase from "../firebase";
 import { ref } from "vue";
 import { useStore } from "vuex";
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import {
+  getAuth,
+  signInWithPopup,
+  GoogleAuthProvider,
+  // FacebookAuthProvider,
+  // getRedirectResult
+} from "firebase/auth";
 
-firebase
+firebase;
 
 const provider = new GoogleAuthProvider();
 const auth = getAuth();
@@ -72,12 +91,11 @@ export default {
       register_form,
       register,
     };
-    
   },
   data() {
-      return {
-        user: ''
-      }
+    return {
+      user: "",
+    };
   },
   methods: {
     handleSignInGoogle() {
@@ -85,7 +103,7 @@ export default {
         .then((result) => {
           // const user = result.user;
 
-          console.log(result.user.displayName)
+          console.log(result.user.displayName);
 
           this.user = result.user.displayName;
           this.isSignedIn = true;
@@ -93,9 +111,23 @@ export default {
         })
         .catch((error) => {
           console.log(error);
-         
         });
     },
+    // handleSignFacebook() {
+    //   signInWithPopup(auth, providered)
+    //     .then((result) => {
+    //       // The signed-in user info.
+    //       // const user = result.user;
+    //       console.log(result.user.displayName);
+    //       this.user = result.user.displayName;
+    //       this.isSignedInFacebook = true;
+    //       this.$router.push("/");
+    //       // ...
+    //     })
+    //     .catch((error) => {
+    //       console.log(error);
+    //     });
+    // },
   },
 };
 </script>

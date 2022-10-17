@@ -14,6 +14,7 @@ import assistance from '../views/assistance.vue'
 import uploadimage from '../views/uploads-image.vue'
 import uploadimagever from '../views/uploadimageVer.vue'
 import forgotpassword from '../views/forgotPassword.vue'
+import profile from '../views/profile.vue'
 
 import insertchatopen from '../views/insert/insertChatopen.vue'
 import insertchatpostive from '../views/insert/insertChatpositive.vue'
@@ -125,6 +126,11 @@ const routes = [
     path: '/forgotpassword',
     name: 'forgotpassword',
     component: forgotpassword
+  },
+  {
+    path: '/profile',
+    name: 'profile',
+    component: profile
   },
 
   /////////////////////// insert ////////////////////////

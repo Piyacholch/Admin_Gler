@@ -51,10 +51,11 @@ export default createStore({
 
     async register ({ commit}, details) {
        const { email, password } = details
-
       try {
         await createUserWithEmailAndPassword(auth, email, password)
-      } catch (error) {
+
+      }
+       catch (error) {
         switch(error.code) {
           case 'auth/email-already-in-use':
             alert("Email already in use")
@@ -71,19 +72,14 @@ export default createStore({
           default:
             alert("Something went wrong")
         }
-
         return
       }
 
       commit('SET_USER', auth.currentUser)
 
       router.push('/')
+
     },
-
-
-
-
-
     async logout ({ commit }) {
       await signOut(auth)
 
@@ -105,6 +101,5 @@ export default createStore({
         }
       })
     }
-    
   }
 })

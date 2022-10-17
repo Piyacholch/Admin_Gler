@@ -69,6 +69,9 @@ export default {
       Text: null,
       data: {},
       id: null, 
+      Name : "",
+      Website :"",
+      Description : ""
     };
   },
   mounted() {

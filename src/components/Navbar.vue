@@ -189,7 +189,7 @@ import { useStore } from 'vuex'
           },
          
           {
-            link: 'profile',
+            link: '/profile',
             name: 'โปรไฟล์',
             tooltip: 'โปรไฟล์',
             icon: 'bx-user',
